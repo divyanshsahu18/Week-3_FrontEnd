@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Count Occurrences</title>
+  <script>
+    function countOccurrences(arr) {
+      const result = {};
+      
+      for (let i = 0; i < arr.length; i++) {
+        if (result[arr[i]] === undefined) {
+          result[arr[i]] = 1;
+        } else {
+          result[arr[i]]++;
+        }
+      }
+      
+      return result;
+    }
+    
+    function calculateOccurrences() {
+      const inputArray = document.getElementById('inputArray').value.split(',').map(item => item.trim());
+      const occurrences = countOccurrences(inputArray);
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = JSON.stringify(occurrences, null, 2);
+    }
+  </script>
+</head>
+<body>
+  <h1>Count Occurrences of Array Elements</h1>
+  <label for="inputArray">Enter an array (comma-separated):</label>
+  <input type="text" id="inputArray" placeholder="e.g., apple, banana, apple, orange">
+  <button onclick="calculateOccurrences()">Count Occurrences</button>
+  <div id="result"></div>
+</body>
+</html>

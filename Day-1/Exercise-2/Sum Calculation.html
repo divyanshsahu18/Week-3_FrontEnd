@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum Calculator</title>
+    <script>
+        function calculateSum() {
+            // Get the values entered by the user
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            
+            // Calculate the sum
+            var sum = num1 + num2;
+            
+            // Display the sum
+            document.getElementById("result").innerHTML = "The sum of " + num1 + " and " + num2 + " is " + sum;
+        }
+    </script>
+</head>
+<body>
+    <h1>Sum Calculator</h1>
+    
+    <label for="num1">Enter the first number: </label>
+    <input type="number" id="num1" step="any"><br><br>
+    
+    <label for="num2">Enter the second number: </label>
+    <input type="number" id="num2" step="any"><br><br>
+    
+    <button onclick="calculateSum()">Calculate Sum</button>
+    
+    <p id="result"></p>
+</body>
+</html>

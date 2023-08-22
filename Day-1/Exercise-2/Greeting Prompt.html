@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greeting Prompt</title>
+    <script type="text/javascript">
+        // Function to display a greeting
+        function greetUser() {
+            var name = document.getElementById("nameInput").value;
+            if (name !== "") {
+                alert("Hello, " + name + "! Welcome!");
+            } else {
+                alert("Hello there! Welcome!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <label for="nameInput">Enter your name: </label>
+    <input type="text" id="nameInput">
+    <button onclick="greetUser()">Enter</button>
+</body>
+</html>

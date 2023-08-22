@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Intersection</title>
+    <script>
+        function findArrayIntersection(arr1, arr2) {
+            const intersection = [];
+
+            for (const num of arr1) {
+                if (arr2.includes(num)) {
+                    intersection.push(num);
+                }
+            }
+
+            return intersection;
+        }
+
+        function displayIntersection() {
+            const input1 = document.getElementById("input1").value;
+            const input2 = document.getElementById("input2").value;
+
+            const arr1 = input1.split(",").map(Number);
+            const arr2 = input2.split(",").map(Number);
+
+            const result = findArrayIntersection(arr1, arr2);
+
+            document.getElementById("result").textContent = "Intersection: " + result.join(", ");
+        }
+    </script>
+</head>
+<body>
+    <h1>Array Intersection Finder</h1>
+    <label for="input1">Enter array 1:</label>
+    <input type="text" id="input1">
+    <br>
+    <label for="input2">Enter array 2:</label>
+    <input type="text" id="input2">
+    <br>
+    <button onclick="displayIntersection()">Find Intersection</button>
+    <p id="result"></p>
+</body>
+</html>

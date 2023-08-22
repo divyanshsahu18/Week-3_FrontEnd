@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Unique Numbers</title>
+</head>
+<body>
+  <script>
+    function getUniqueNumbers(inputArray) {
+      const uniqueNumbers = [];
+
+      for (const num of inputArray) {
+        if (!uniqueNumbers.includes(num)) {
+          uniqueNumbers.push(num);
+        }
+      }
+
+      return uniqueNumbers;
+    }
+
+    const originalArray = [1, 2, 2, 3, 4, 4, 5, 6, 6];
+    const uniqueArray = getUniqueNumbers(originalArray);
+
+    console.log("Original Array:", originalArray);
+    console.log("Unique Array:", uniqueArray);
+  </script>
+</body>
+</html>

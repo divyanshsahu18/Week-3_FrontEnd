@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Paragraph Creation</title>
+</head>
+<body>
+
+<h1>Dynamic Paragraph Creation</h1>
+<input type="text" id="textInput" placeholder="Enter text">
+<button id="createButton">Create Paragraph</button>
+<div id="paragraphContainer"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const textInput = document.getElementById("textInput");
+  const createButton = document.getElementById("createButton");
+  const paragraphContainer = document.getElementById("paragraphContainer");
+
+  createButton.addEventListener("click", function() {
+    const inputValue = textInput.value.trim();
+    
+    if (inputValue !== "") {
+      const newParagraph = document.createElement("p");
+      newParagraph.textContent = inputValue;
+      paragraphContainer.appendChild(newParagraph);
+      textInput.value = ""; // Clear the input after creating the paragraph
+    }
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Paragraph Creation with Color</title>
+</head>
+<body>
+
+<h1>Dynamic Paragraph Creation with Color</h1>
+<input type="text" id="textInput" placeholder="Enter text">
+<select id="colorSelect">
+  <option value="black">Black</option>
+  <option value="red">Red</option>
+  <option value="blue">Blue</option>
+  <option value="green">Green</option>
+</select>
+<button id="createButton">Create Paragraph</button>
+<div id="paragraphContainer"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const textInput = document.getElementById("textInput");
+  const colorSelect = document.getElementById("colorSelect");
+  const createButton = document.getElementById("createButton");
+  const paragraphContainer = document.getElementById("paragraphContainer");
+
+  createButton.addEventListener("click", function() {
+    const inputValue = textInput.value.trim();
+    const selectedColor = colorSelect.value;
+    
+    if (inputValue !== "") {
+      const newParagraph = document.createElement("p");
+      newParagraph.textContent = inputValue;
+      newParagraph.style.color = selectedColor;
+      paragraphContainer.appendChild(newParagraph);
+      textInput.value = ""; // Clear the input after creating the paragraph
+    }
+  });
+});
+</script>
+
+</body>
+</html>
